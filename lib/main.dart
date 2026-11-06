@@ -28,26 +28,27 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('My app'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Increase number'),
-            Text(number.toString(), style: TextStyle(
-                fontSize: 22, fontWeight: FontWeight.bold
-            )),
+      body: Container(
+        width: 400,
+          height: 400,
+        margin: const EdgeInsets.only(left: 20, top: 20),
+        // constraints: BoxConstraints.expand(),//full screen
+        alignment: Alignment.center,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          // borderRadius: BorderRadius.circular(10),
+          color: Colors.pink,
+          boxShadow:[
+            BoxShadow(color: Colors.grey,blurRadius: 8, spreadRadius: 7),
           ],
         ),
+        padding: const EdgeInsets.all(10),
+        transform: Matrix4.rotationZ(0.5),
+        // width: 200,
+        // height: 200,
+
+        child: const Text("Hello", style: TextStyle(color: Colors.black,fontSize: 30, fontWeight: FontWeight.bold),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: (){
-           setState(() {
-             number ++;
-           });;
-          },
-
-
       ),
     );
   }
